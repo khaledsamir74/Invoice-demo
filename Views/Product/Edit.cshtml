@@ -1,0 +1,67 @@
+﻿@model InvoiceDemo.Models.Product
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit Product</h1>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="d-flex flxe-row m-2">
+                <label asp-for="ProductName" class="lableInput control-label col-3"></label>
+                <input asp-for="ProductName" class="form-control col-5" />
+                <span asp-validation-for="ProductName" class="text-danger"></span>
+            </div>
+            <div class="d-flex flxe-row m-2">
+                <label asp-for="ProductNameAr" class="lableInput control-label col-3">Product Name (Arabic)</label>
+                <input asp-for="ProductNameAr" class="form-control col-5" />
+                <span asp-validation-for="ProductNameAr" class="text-danger"></span>
+            </div>
+            <div class="d-flex flxe-row m-2">
+                <label asp-for="InternalCode" class="lableInput control-label col-3"></label>
+                <input asp-for="InternalCode" class="form-control col-5" />
+                <span asp-validation-for="InternalCode" class="text-danger"></span>
+            </div>
+            <div class="d-flex flxe-row m-2">
+                <label asp-for="BarCode" class="lableInput control-label col-3"></label>
+                <input asp-for="BarCode" class="form-control col-5" />
+                <span asp-validation-for="BarCode" class="text-danger"></span>
+            </div>
+            <div class="d-flex flxe-row m-2">
+                <label asp-for="Description" class="lableInput control-label col-3"></label>
+                <input asp-for="Description" class="form-control col-5" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="d-flex flxe-row m-2">
+                <label asp-for="Unit" class="lableInput control-label col-3"></label>
+                <input asp-for="Unit" class="form-control col-5" />
+                <span asp-validation-for="Unit" class="text-danger"></span>
+            </div>
+            <div class="d-flex flxe-row m-2">
+                <label asp-for="Price" class="lableInput control-label col-3"></label>
+                <input asp-for="Price" class="form-control col-5" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="d-flex flxe-row m-2">
+                <label asp-for="IsActive" class="lableInput control-label col-3"></label>
+                <input asp-for="IsActive" class="form-control col-5" />
+                <span asp-validation-for="IsActive" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <a asp-action="Index" class="btn btn-applogica-secondary m-2">Back</a>
+                <input type="submit" value="Save" class="btn btn-applogica m-2" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

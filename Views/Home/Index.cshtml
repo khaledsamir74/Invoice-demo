@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <h3>To Applogica</h3>
+    <div class="row">
+        <select type="button" class="col m-2 p-2 btn btn-applogica" onchange="window.location.href=this.value">
+            <option>Product</option>
+            <option value="/Product/Index">List of Products</option>
+            <option value="/Product/Create">Add Product</option>
+        </select>
+        <select type="button" class="col m-2 p-2 btn btn-applogica" onchange="window.location.href=this.value">
+            <option>Customers</option>
+            <option value="/Customer/Index">List of customers</option>
+            <option value="/Customer/Create">Add Customer</option>
+        </select>
+    </div>
+    <div class="row">
+        <select type="button" class="col m-2 p-2 btn btn-applogica" onchange="window.location.href=this.value">
+            <option>Invoice</option>
+            <option value="/Invoice/Index">List of invoices</option>
+            <option value="/Invoice/Create">Add invoice</option>
+        </select>
+        <select type="button" class="col m-2 p-2 btn btn-applogica" onchange="window.location.href=this.value">
+            <option>Company</option>
+            <option value="/Company/Index">List of Companies</option>
+            <option value="/Company/Create">Add Company</option>
+        </select>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewData["Title"] = "Error";
+}
+
+<h1>Error List</h1>
+<hr />
+<div>
+
+    <table class="table">
+        <thead class="thead-light">
+            <tr>
+                <th width="10%" scope="col">Row</th>
+                <th width="10%" scope="col">Column</th>
+                <th width="80%" scope="col">Error Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var error in Model.validationErrors)
+            {
+                <tr>
+                    <td>@error.Row</td>
+                    <td>@error.Col</td>
+                    <td>@error.Message</td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+    <a asp-action="Index">Back to List</a>
+</div>

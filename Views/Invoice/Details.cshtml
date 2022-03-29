@@ -1,0 +1,165 @@
+﻿@model InvoiceDemo.Models.ViewModels.Invoice.DetailsViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="container">
+
+    <a class="btn m-1 btn-applogica-secondary" asp-action="Index" >Back</a>
+    <div class="d-flex flex-column">
+        <div class="col-12">
+            <lable style="font-size:30px; font-weight:700">Invoice</lable>
+            <hr />
+        </div>
+        <div class="d-flex flex-row">
+            <div class="col-6">
+                <lable><b>ID : </b></lable><span>@Model.InvoiceId</span><br />
+                <lable><b>Submission Date : </b></lable><span>@Model.SubmissionDate</span><br />
+            </div>
+            <div class="col-6">
+                <lable><b>Registration Number : </b></lable><span>@Model.CustomerRegistrationNumber</span><br />
+                <lable><b>Issuer RIN : </b></lable><span>200875485</span><br />
+            </div>
+        </div>
+        <div class="d-flex flex-row">
+            <div class="col-6 DetailsTable">
+                <lable class="DetailsTableHead"><b>Issuer </b>(From)</lable>
+                <hr />
+                <lable class="col-12 dataHead">Name</lable><br />
+                <span class="col-12">@Model.CompanyName</span>
+                <br />
+                <br />
+                <div class="d-flex flex-row">
+                    <div class="col-8">
+                        <lable class="dataHead">Registration Number</lable><br />
+                        <span>@Model.CompanyRegistrationNumber</span>
+                    </div>
+                    <div class="col-4">
+                        <lable class="dataHead">Type</lable><br />
+                        <span>@Model.CompanyType</span>
+                    </div>
+                </div>
+                <br />
+                <div class="d-flex flex-row">
+                    <div class="col-8">
+                        <lable class="dataHead">Address</lable><br />
+                        <span>@Model.CompanyAddress</span>
+                    </div>
+                    <div class="col-4">
+                        <lable class="dataHead">Tax Activity Code</lable><br />
+                        <span>@Model.CompanyTaxActivityCode</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 DetailsTable">
+                <lable class="DetailsTableHead"><b>Receiver</b> (To)</lable>
+                <hr />
+                <lable class="col-12 dataHead">Name</lable><br />
+                <span class="col-12">@Model.CustomerName</span>
+                <br />
+                <br />
+                <div class="d-flex flex-row">
+                    <div class="col-8">
+                        <lable class="dataHead">Registration Number</lable><br />
+                        <span>@Model.CustomerRegistrationNumber</span>
+                    </div>
+                    <div class="col-4">
+                        <lable class="dataHead">Type</lable><br />
+                        <span>@Model.CustomerType</span>
+                    </div>
+                </div>
+                <br />
+                <div class="d-flex flex-row">
+                    <div class="col-8">
+                        <lable class="dataHead">Address</lable><br />
+                        <span>@Model.CustomerAddress</span>
+                    </div>
+                    <div class="col-4">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <h5 class="col-12"><b>List of items</b></h5>
+        <div class="col-12">
+
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">Bar Code</th>
+                        <th scope="col">Product Name</th>
+                        <th scope="col">Product Name (Arabic)</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Sales Total</th>
+                        <th scope="col">Tax Rate</th>
+                        <th scope="col">Tax Amount</th>
+                        <th scope="col">Final Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var element in @Model.ProductList)
+                    {
+                        <tr>
+
+                            <td>@element.BarCode</td>
+                            <td>@element.ProductName</td>
+                            <td>@element.ProductNameAr</td>
+                            <td>@element.Price</td>
+                            <td>@element.Qty</td>
+                            <td>@element.SalesTotal</td>
+                            <td>@element.Tax</td>
+                            <td>@Math.Round(element.TaxAmmount,2)</td>
+                            <td>@element.Total</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+
+        </div>
+        <div class="d-flex flex-row SummeryMasterTable">
+            <div class="SummeryTable col-4">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td>Total Net</td>
+                            <td>@ViewBag.TotalNet</td>
+                        </tr>
+                        <tr>
+                            <td>Total Tax Amount</td>
+                            <td>@ViewBag.TotalTaxAmount</td>
+                        </tr>
+                        <tr>
+                            <td>Total Amount</td>
+                            <td>@ViewBag.FinalTotal</td>
+                        </tr>
+                        <tr>
+                            <td>Total Discount</td>
+                            <td>@Model.Discount</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight:700">Grand Total</td>
+                            <td style="font-weight:700">@ViewBag.GrandTotal</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="d-flex flex-row">
+            <div class="col-12 DetailsTable">
+                <lable class="DetailsTableHead"><b>Signatures</b></lable>
+                <hr />
+                <div class="d-flex flex-row">
+                    <div class="col-12">
+                        <lable class="dataHead">Signed by</lable><br />
+                        <span>@Model.CompanyNameAr</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <p>This invoice has been generated via Applogica</p>
+    </div>
+</div>
+

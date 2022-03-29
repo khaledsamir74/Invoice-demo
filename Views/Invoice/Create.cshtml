@@ -1,0 +1,95 @@
+﻿@model InvoiceDemo.Models.Invoice
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create Invoice</h1>
+<h4>Invoice#: INV-@ViewBag.lastInv</h4>
+<form method="post" asp-controller="Invoice" asp-action="Import" enctype="multipart/form-data">
+    <input type="file" name="file" />
+    <button type="submit">Upload</button>
+</form>
+<hr />
+
+<div class="row">
+    <div class="col-md-6">
+        <div asp-action="Create" class="d-flex flex-column">
+            <div class="d-flex flex-row col-12">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group col-6">
+                    <label asp-for="CustomerId" class="control-label"> Select Customer</label>
+                    <select id="ddlCustomerId" asp-for="CustomerId" class="form-control select-applogica" asp-items="ViewBag.customers"></select>
+                </div>
+                <div class="form-group col-6">
+                    <label asp-for="Date" class="control-label">Invoice Date</label>
+                    <input id="ddlDate" asp-for="Date" class="form-control select-applogica" />
+                    <span asp-validation-for="Date" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="row">
+    <div class="mb-2 mt-0">
+        <button class="btn btn btn-applogica" id="addRow">Add Product</button>
+    </div>
+    <div id="main" class="table-responsive">
+        <table id="data" class="table table-centered mb-0 table-nowrap">
+            <tr>
+                <td><b>Product Name</b></td>
+                <td><b>اسم المنتج</b></td>
+                <td><b>Unit Price</b></td>
+                <td><b>Qty</b></td>
+                <td><b>Sales Total</b></td>
+                <td><b>Discount</b></td>
+                <td><b>Discount Amount</b></td>
+                <td><b>Net Total</b></td>
+                <td><b>Tax</b></td>
+                <td><b>Tax Amount</b></td>
+                <td><b>Total</b></td>
+                <td></td>
+            </tr>
+            <tbody>
+            </tbody>
+        </table>
+    </div> @*ُEnd Table*@
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-applogica-secondary2">Back to List</a>
+    <a id="btnsubmit" type="submit" asp-action="Index" class="btn btn-applogica2">Create</a>
+
+</div>
+<div class="d-flex flex-row SummeryMasterTable">
+    <div class="SummeryTable col-4">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td>Sales total</td>
+                    <td id="salesTotal">
+                        <span>0</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Tax Total</td>
+                    <td id="taxTotal"><span>0</span></td>
+                </tr>
+                <tr>
+                    <td><label asp-for="Discount" class="control-label">Discount</label></td>
+                    <td><input id="discount" asp-for="Discount" class="form-control" /></td>
+                </tr>
+                <tr>
+                    <td>Grand Total</td>
+                    <td id="grandTotal"><span>0</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+@section Scripts {
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+}

@@ -1,0 +1,190 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+}
+.DetailsTable {
+    border-style: solid;
+    border-width: thin;
+    border-radius: 3px;
+    margin: 5px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+.DetailsTableHead {
+}
+.dataHead{
+    color:darkgray;
+}
+.SummeryMasterTable {
+    justify-content: flex-end;
+}
+.SummeryTable {
+    border-style: solid;
+    border-width: thin;
+}
+.lableInput{
+    background-color: #f26551 !important;
+    border-radius: 5px;
+    color: white;
+    padding: 7px;
+    margin-right: 5px;
+}
+.btn-applogica {
+    background-color: #f26551;
+    color:white;
+    float:right;
+    font-size:20px;
+}
+    .btn-applogica:hover {
+        background-color: white;
+        color: #f26551;
+        border-style: solid;
+        border-color: #f26551;
+        border-radius: 5px;
+    }
+.btn-applogica-secondary {
+    background-color: #5f6062;
+    color: white;
+    float: right;
+    font-size: 20px;
+}
+
+    .btn-applogica-secondary:hover {
+        background-color: white;
+        color: #5f6062;
+        border-style: solid;
+        border-color: #5f6062;
+        border-radius: 5px;
+    }
+.table-head-applogica  {
+    background-color: #f26551;
+    color:white;
+}
+.table-applogica {
+    border-style: solid;
+    border-color: lightgray;
+    border-width:thin;
+}
+.btn-applogica2 {
+    background-color: #f26551;
+    color: white;
+    float: left;
+    font-size: 20px;
+}
+
+    .btn-applogica2:hover {
+        background-color: white;
+        color: #f26551;
+        border-style: solid;
+        border-color: #f26551;
+        border-radius: 5px;
+    }
+
+.btn-applogica-secondary2 {
+    background-color: #5f6062;
+    color: white;
+    float: left;
+    font-size: 20px;
+    margin-right:5px;
+}
+
+    .btn-applogica-secondary2:hover {
+        background-color: white;
+        color: #5f6062;
+        border-style: solid;
+        border-color: #5f6062;
+        border-radius: 5px;
+    }
+.select-applogica {
+    font-size: 20px;
+    margin-right: 5px;
+}
+div.pager {
+    text-align: center;
+    margin: 1em 0;
+}
+
+    div.pager span {
+        display: inline-block;
+        width: 1.8em;
+        height: 1.8em;
+        line-height: 1.8;
+        text-align: center;
+        cursor: pointer;
+        background: #f26551;
+        color: #fff;
+        margin-right: 0.5em;
+    }
+
+        div.pager span.active {
+            background: #e6f1fb;
+            color: #f26551;
+            font-weight:700;
+        }
